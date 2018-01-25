@@ -67,12 +67,12 @@ class Compute(object):
         try:
             result = operations[operation](value, other)
         except Exception as e:
-            self.mail.send.async(mail, "An error occurred", str(e))
+            self.mail.send.call_async(mail, "An error occurred", str(e))
             raise
         else:
-            self.mail.send.async(mail,
-                                 "Your operation is complete!",
-                                 "The result is: %s" % result)
+            self.mail.send.call_async(mail,
+                                      "Your operation is complete!",
+                                      "The result is: %s" % result)
             return result
 
 
