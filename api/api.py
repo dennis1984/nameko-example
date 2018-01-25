@@ -24,5 +24,5 @@ def compute():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='121.42.249.43', port='8328')
+    app.run(debug=True, host='121.42.249.43', port=8328)
 
