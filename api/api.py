@@ -19,7 +19,7 @@ def compute():
 
     with ClusterRpcProxy(CONFIG) as rpc:
         rpc.mail.send.async((email,), subject, msg)
-        result = rpc.compute.compute.async(operation, value, other, (email,))
+        result = rpc.compute.compute.call_async(operation, value, other, (email,))
         return msg, 200
 
 
