@@ -53,6 +53,11 @@ class Mail(object):
     def send(self, to, subject, contents):
         send_email(to, subject, contents)
 
+
+class Compute(object):
+    name = 'compute'
+    mail = RpcProxy('mail')
+
     @rpc
     def compute(self, operation, value, other, mail):
         operations = {u'sum': lambda x, y: int(x) + int(y),
